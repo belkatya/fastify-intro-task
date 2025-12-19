@@ -1,0 +1,16 @@
+doctype html
+html
+  head
+    title Список пользователей
+  body
+    h1 Список пользователей
+    
+    form(role="form" method="GET" action=route('users'))
+      input(type="text" name="term" placeholder="Поиск пользователя" value=term || "")
+      input(type="submit" value="Найти")
+    
+    ul
+      each user in users
+        li
+          a(href=route('user', { id: user.id })) #{user.userName}
+          |  (#{user.email})

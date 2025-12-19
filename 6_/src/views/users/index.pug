@@ -1,0 +1,16 @@
+extends ../layout/page
+
+block content
+  h1 Список пользователей
+  table
+    thead
+      tr
+        th Имя пользователя
+        th Адрес почты
+    tbody
+      each user in users
+        tr
+          td= user.username
+          td= user.email
+          td
+            a(href="/users/" + user.id) Посмотреть

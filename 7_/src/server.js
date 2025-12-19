@@ -13,7 +13,17 @@ export default async () => {
   app.get("/", (req, res) => res.view("src/views/index"));
 
   // BEGIN (write your solution here)
+  app.get("/users", (req, res) => {
+    const { term } = req.query;
+    let currentUsers = users;
 
+    if (term) {
+      currentUsers = users.filter((user) =>
+        user.username.toLowerCase().includes(term.toLowerCase())
+      );
+    }
+    res.view("src/views/users/index", { users: currentUsers });
+  });
   // END
 
   app.get("/users/:id", (req, res) => {

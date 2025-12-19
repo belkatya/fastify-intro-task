@@ -8,7 +8,15 @@ export default () => {
   const users = getUsers();
 
   // BEGIN (write your solution here)
-
+  app.get("/users", (req, res) => {
+    let { page = 1, per = 5 } = req.query;
+    page = parseInt(page);
+    per = parseInt(per);
+    const startIndex = (page - 1) * per;
+    const endIndex = startIndex + per;
+    const paginatedUsers = users.slice(startIndex, endIndex);
+    res.send(paginatedUsers);
+  });
   // END
 
   return app;

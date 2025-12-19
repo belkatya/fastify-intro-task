@@ -1,0 +1,6 @@
+extends ../layout/page
+
+block content
+  h1 Пользователь #{user.username}
+  p Адрес почты: #{user.email}
+  a(href="/users") Вернуться к списку пользователей

@@ -1,0 +1,20 @@
+doctype html
+html
+  head
+    title Новая статья
+  body
+    h1 Новая статья
+    
+    if error
+      p(style="color: red") #{error.message}
+    
+    form(action="/articles" method="post")
+      div
+        label
+          | Название
+          input(type="text" name="title" value=title || "")
+      div
+        label
+          | Текст
+          textarea(name="text") #{text || ""}
+      input(type="submit" value="Создать")

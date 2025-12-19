@@ -1,0 +1,29 @@
+extends ../layout/page
+
+block content
+  h1 Список пользователей
+  
+  form(method="get" action="/users")
+    input(
+      type="text" 
+      name="term" 
+      value=searchTerm
+      placeholder="Введите имя пользователя"
+    )
+    button(type="submit") Найти
+  
+  if users.length > 0
+    table
+      thead
+        tr
+          th Имя пользователя
+          th Адрес почты
+      tbody
+        each user in users
+          tr
+            td= user.username
+            td= user.email
+            td
+              a(href="/users/" + user.id) Посмотреть
+  else
+    p Пользователи не найдены
