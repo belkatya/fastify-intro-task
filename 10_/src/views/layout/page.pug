@@ -1,0 +1,8 @@
+html
+  head
+    title My Site
+  body
+    if flash
+      .alert(class=`alert-${flash.type}`)
+        = flash.message
+    block content

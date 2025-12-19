@@ -1,0 +1,13 @@
+extends ../layout/page.pug
+
+block content
+  h1.header= 'Статья'
+  form(action = '/posts/' + post.id, method = 'POST')
+    div
+      label Название:
+        input(type = 'text', name = 'title' value=post.title)
+    div
+      label Текст:
+        textarea(type = 'text', name = 'body')=post.body
+    div
+      input(type = 'submit', value = 'Сохранить')

@@ -1,0 +1,18 @@
+extends ../layout/page.pug
+
+block content
+  h1.header= 'Статья'
+  .row.justify-content-center
+    .col-12.col-md-8
+      .card.shadow-sm
+        .card-body.row.p-5
+          .col-12.col-md-6.mt-3.mt-mb-0
+            form(action = '/posts', method = 'post')
+              .form-floating.mb-3
+                input.form-control(id= "title" type = 'text' name = 'title')
+                label(for="title") Название
+              .mb-3
+                label(for= "body") Текст
+                textarea.form-control(id="body" type = 'text' name = 'body')
+              div
+                input(class='btn btn-primary' type = 'submit' value = 'Создать')

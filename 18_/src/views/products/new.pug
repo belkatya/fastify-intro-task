@@ -1,0 +1,16 @@
+extends ../layout/page.pug
+
+block content
+  h1.header= 'Товар'
+  form(action = '/products', method = 'post')
+    div
+      label Название
+        input(type = 'text', name = 'title')
+    div
+      label Описание
+        textarea(type = 'text', name = 'description')
+    div
+      label Цена
+        input(type = 'number', name = 'price')
+    div
+      input(type = 'submit', value = 'Создать')

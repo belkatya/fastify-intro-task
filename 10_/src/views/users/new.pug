@@ -1,0 +1,13 @@
+extends ../layout/page.pug
+
+block content
+  h1.header= 'Создание пользователя'
+  form(action = '/users', method = 'post')
+    div
+      label Имя:
+        input(type = 'text', name = 'userName')
+    div
+      label Email:
+        input(type = 'text', name = 'email')
+    div
+      input(type = 'submit', value = 'Создать')

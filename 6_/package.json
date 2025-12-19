@@ -1,0 +1,30 @@
+{
+  "type": "module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --color",
+    "start": "npx nodemon src/index.js"
+  },
+  "dependencies": {
+    "@babel/preset-env": "^7.24.8",
+    "@faker-js/faker": "^8.4.1",
+    "@fastify/view": "^9.1.0",
+    "@jest/globals": "*",
+    "fastify": "^4.28.1",
+    "jest": "^29.7.0",
+    "jest-transform-pug": "^1.0.0",
+    "lodash": "^4.17.21",
+    "pug": "^3.0.3"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.[t|j]sx?$": "babel-jest",
+      "\\.(pug)$": "jest-transform-pug"
+    }
+  },
+  "devDependencies": {
+    "axios": "^1.7.2"
+  }
+}

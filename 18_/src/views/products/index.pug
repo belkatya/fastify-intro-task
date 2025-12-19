@@ -1,0 +1,10 @@
+extends ../layout/page.pug
+
+
+block content
+  a(href='/products/new') Создать товар
+
+  each product, index in products
+    p
+      a(href='/products/' + product.id) #{product.title}
+

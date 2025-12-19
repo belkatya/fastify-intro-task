@@ -1,0 +1,10 @@
+extends ../layout/page.pug
+
+block content
+
+  p
+    a(href='/articles/new') Создать статью
+
+    each article, index in articles
+      p
+        a(href='/articles/' + article.id) #{article.title}

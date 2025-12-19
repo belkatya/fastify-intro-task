@@ -1,0 +1,14 @@
+extends ../layout/page.pug
+
+
+block content
+  a(href='/posts/new') Создать пост
+
+  div.table-responsive
+    table.table.table-borderless.table-striped.mt-5.bg-white
+      tbody
+        each post, index in posts
+          tr
+            td
+              a(href='/posts/' + post.id) #{post.title}
+

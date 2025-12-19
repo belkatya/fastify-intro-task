@@ -1,0 +1,12 @@
+extends ../layout/page.pug
+
+
+block content
+  each post, index in posts
+    p
+      a(href='/posts/' + post.id) #{post.title}
+
+  div
+    a(href='/posts?page=' + previousPage) Предыдущая страница
+  div
+    a(href='/posts?page=' + nextPage) Следующая страница
