@@ -1,0 +1,13 @@
+doctype html
+html
+  head
+    title= post.title
+  body
+    h1= post.title
+    p= post.body
+    p 
+      strong ID: 
+      = post.id
+    
+    br
+    a(href="/posts") ← Back to all posts

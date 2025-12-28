@@ -1,0 +1,29 @@
+doctype html
+html
+  head
+    title Posts List
+  body
+    h1 Posts
+    
+    if posts && posts.length > 0
+      ul
+        each post in posts
+          li
+            a(href=`/posts/${post.id}`)= post.title
+    else
+      p No posts to display
+    
+    // Пагинация
+    if totalPages > 0
+      div
+        if hasPrevPage
+          a(href=`/posts?page=${currentPage - 1}`) ← Previous
+        else
+          span ← Previous
+        
+        span &nbsp;Page #{currentPage} of #{totalPages}&nbsp;
+        
+        if hasNextPage
+          a(href=`/posts?page=${currentPage + 1}`) Next →
+        else
+          span Next →
