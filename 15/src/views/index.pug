@@ -1,0 +1,11 @@
+extends ./layout/page.pug
+
+block content
+  if username
+    h1 Добро пожаловать, #{username}
+    form(action="/sessions/delete" method="post")
+      input(type="submit" value="Выйти")
+  else
+    h1 Добро пожаловать, гость
+    p
+      a(href="/sessions/new") Войти
